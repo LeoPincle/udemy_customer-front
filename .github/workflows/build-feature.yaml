@@ -5,14 +5,12 @@ on:
       - "feature/*"
 jobs:
   build-feature:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - name: pull and checkout from git repository
         run: 
           echo "pulling and checking out from git repository"
-      - name: Checkout code
-        uses: actions/checkout@v2
 
       - name: Setup Node.js 18
         uses: actions/setup-node@v3
@@ -29,4 +27,4 @@ jobs:
         run: ng test
 
       - name: Build Angular app
-        run: ng build --prod
+        run: ng build 
